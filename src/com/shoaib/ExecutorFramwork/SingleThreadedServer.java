@@ -22,13 +22,13 @@ public class SingleThreadedServer {
                     "Content-Length: " + DOCUMENT.length()+
             "\r\n\r\n";
 
-    public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket = new ServerSocket(8080);
-        while (true){
-            Socket connection = serverSocket.accept();
-            serveRequest(connection);
-        }
-    }
+//    public static void main(String[] args) throws IOException {
+//        ServerSocket serverSocket = new ServerSocket(8080);
+//        while (true){
+//            Socket connection = serverSocket.accept();
+//            serveRequest(connection);
+//        }
+//    }
     public static void serveRequest(Socket connection){
         System.out.println("New connection request from: "+ connection.toString());
         try(OutputStream os = connection.getOutputStream();
